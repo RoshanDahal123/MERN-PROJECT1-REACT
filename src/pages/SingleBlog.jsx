@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function SingleBlog() {
   const { id } = useParams();
@@ -46,9 +47,11 @@ function SingleBlog() {
                   </button>
                 </div>
                 <div className="w-1/2 px-2">
-                  <button className="w-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white py-2 px-4 rounded-full font-bold hover:bg-gray-300 dark:hover:bg-gray-600">
-                    Edit Me
-                  </button>
+                  <Link to={`/edit/${blog._id}`}>
+                    <button className="w-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white py-2 px-4 rounded-full font-bold hover:bg-gray-300 dark:hover:bg-gray-600">
+                      Edit Me
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>
