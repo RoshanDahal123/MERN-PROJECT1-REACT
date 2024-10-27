@@ -6,7 +6,9 @@ import axios from "axios";
 export default function Home() {
   const [blogs, setBlogs] = useState([]);
   const fetchBlogs = async () => {
-    const response = await axios.get("http://localhost:3000/blog/");
+    const response = await axios.get(
+      "https://mern-course-kqvv.onrender.com/blog/"
+    );
     setBlogs(response.data.data);
   };
   useEffect(() => {

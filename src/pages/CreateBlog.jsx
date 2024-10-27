@@ -27,11 +27,15 @@ name=subtitle,value=hehe
   const createBlog = async (e) => {
     e.preventDefault();
     console.log("form submitted");
-    const response = await axios.post("http://localhost:3000/blog", data, {
-      headers: {
-        "Content-Type": "multipart/form-data",
-      },
-    });
+    const response = await axios.post(
+      "https://mern-course-kqvv.onrender.com/blog",
+      data,
+      {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      }
+    );
     if (response.status === 200) {
       navigate("/");
     } else {

@@ -8,14 +8,18 @@ function SingleBlog() {
   const navigate = useNavigate();
   const [blog, setBlog] = useState([]);
   const fetchSingleBlogs = async () => {
-    const response = await axios.get("http://localhost:3000/blog/" + id);
+    const response = await axios.get(
+      "https://mern-course-kqvv.onrender.com/blog/" + id
+    );
     setBlog(response.data.data);
   };
   useEffect(() => {
     fetchSingleBlogs();
   }, []);
   const deleteFunction = async () => {
-    const response = await axios.delete("http://localhost:3000/blog/" + id);
+    const response = await axios.delete(
+      "https://mern-course-kqvv.onrender.com/blog/" + id
+    );
     console.log(response.status);
     if (response.status === 200) {
       alert("Deleted successfully");

@@ -14,7 +14,9 @@ function EditPage() {
     image: "",
   });
   const fetchblogData = async () => {
-    const response = await axios.get("http://localhost:3000/blog/" + id);
+    const response = await axios.get(
+      "https://mern-course-kqvv.onrender.com/blog/" + id
+    );
     const blogData = response.data.data;
     setData({
       title: blogData.title,
@@ -34,7 +36,7 @@ function EditPage() {
   const editBlog = async (e) => {
     e.preventDefault();
     const response = await axios.patch(
-      "http://localhost:3000/blog/" + id,
+      "https://mern-course-kqvv.onrender.com/blog/" + id,
       data,
       {
         headers: {
